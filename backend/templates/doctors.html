@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctors | HealthCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🏥 HealthCare</div>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/appointments-page">My Appointments</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<section class="doctor-section">
+    <h2>Available Doctors</h2>
+    <div id="doctorList" class="doctor-grid"></div>
+</section>
+
+<button class="book-btn" onclick="bookNow('${doctor.id}', '${doctor.name}')">
+    Book Appointment
+</button>
+
+
+<script src="/static/js/doctors.js"></script>
+
+<script>
+function logout(){
+    localStorage.clear();
+    window.location = "/login";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account | HealthCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <div class="auth-icon">🏥</div>
+            <h1>Create Account</h1>
+            <p>Join us to manage your health appointments</p>
+        </div>
+
+        <form id="signupForm" class="auth-form">
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" id="phone" placeholder="+1234567890">
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="dob">
+                </div>
+
+                <div class="form-group">
+                    <label>Blood Group (Optional)</label>
+                    <input type="text" id="blood" placeholder="A+">
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Address (Optional)</label>
+                    <input type="text" id="address" placeholder="123 Main St, City, Country">
+                </div>
+            </div>
+
+            <button type="submit" class="auth-btn">Create Account</button>
+
+            <p class="auth-footer">
+                Already have an account? <a href="/login">Login</a>
+            </p>
+
+        </form>
+    </div>
+
+    <script src="static/js/auth.js"></script>
+</body>
+</html>

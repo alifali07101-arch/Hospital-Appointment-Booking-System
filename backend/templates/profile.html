@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+   
+    <aside class="sidebar">
+        <h2 class="logo">Health<span>Care</span></h2>
+
+        <div class="user-box">
+            <div class="avatar" id="avatarLetter">U</div>
+            <div>
+                <h4 id="sidebarName">Loading...</h4>
+                <small id="sidebarEmail"></small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/dashboard">🏠 Dashboard</a>
+            <a href="/doctors-page">👨‍⚕️ Doctors</a>
+            <a href="/appointments">📅 Appointments</a>
+            <a href="/history">📋 Medical History</a>
+            <a href="/profile" class="active">👤 Profile</a>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- MAIN PROFILE CONTENT -->
+    <main class="main-content">
+
+        <h2>My Profile</h2>
+        <p class="subtext">Your personal and medical information</p>
+
+        <div class="profile-top-card">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div>
+                <h3 id="profileName">Loading...</h3>
+                <p>Patient</p>
+            </div>
+        </div>
+
+        <div class="profile-grid">
+
+            <div class="profile-card">
+                📧 <div>
+                    <h4>Email Address</h4>
+                    <p id="profileEmail"></p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                📞 <div>
+                    <h4>Phone Number</h4>
+                    <p id="profilePhone"></p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                📅 <div>
+                    <h4>Date of Birth</h4>
+                    <p id="profileDob"></p>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                🩸 <div>
+                    <h4>Blood Group</h4>
+                    <p id="profileBlood"></p>
+                </div>
+            </div>
+
+            <div class="profile-card full">
+                📍 <div>
+                    <h4>Address</h4>
+                    <p id="profileAddress"></p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<script src="static/js/profile.js"></script>
+</body>
+</html>

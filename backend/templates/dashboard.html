@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="dash-body">
+
+<div class="dash-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2 class="logo">Health<span>Care</span></h2>
+
+        <div class="user-box">
+            <div class="avatar" id="avatarLetter">T</div>
+            <div>
+                <h4 id="sidebarName">Loading...</h4>
+                <small id="sidebarEmail"></small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="/dashboard" class="active">🏠 Dashboard</a>
+            <a href="/doctors-page">👨‍⚕️ Doctors</a>
+            <a href="/appointments">📅 Appointments</a>
+            <a href="/history">📋 Medical History</a>
+            <a href="/profile">👤 Profile</a>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="welcome-bar">
+            <h2>Welcome back!</h2>
+            <p>Manage your appointments and health records all in one place</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                📅 <h3 id="upcomingCount">0</h3>
+                <p>Upcoming Appointments</p>
+            </div>
+
+            <div class="stat-card">
+                👨‍⚕️ <h3>6+</h3>
+                <p>Specialist Doctors</p>
+            </div>
+
+            <div class="stat-card">
+                ⏰ <h3>24/7</h3>
+                <p>Available Support</p>
+            </div>
+
+            <div class="stat-card">
+                🛡️ <h3>Secure</h3>
+                <p>Health Records</p>
+            </div>
+        </div>
+
+        <!-- UPCOMING APPOINTMENTS -->
+        <div class="appointments-section">
+            <div class="section-header">
+                <h3>Upcoming Appointments</h3>
+                <button onclick="window.location='/appointments'">View All</button>
+            </div>
+
+            <div id="appointmentList" class="no-appointments">
+                <p>No upcoming appointments</p>
+                <button onclick="window.location='/doctors-page'">Book Your First Appointment</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script src="static/js/dashboard.js"></script>
+</body>
+</html>
