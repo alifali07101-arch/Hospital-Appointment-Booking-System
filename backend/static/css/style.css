@@ -434,6 +434,7 @@ footer {
 
 .dash-layout {
     display: flex;
+    min-height: 100vh;
 }
 
 /* Sidebar */
@@ -477,7 +478,12 @@ footer {
     border-radius: 6px;
 }
 
-.sidebar nav a.active,
+.sidebar-nav a.active {
+    background: #e3f2fd;
+    color: #2E86C1;
+    border-right: 4px solid #2E86C1;
+    font-weight: bold;
+}
 .sidebar nav a:hover {
     background: #e6f2ff;
 }
@@ -771,3 +777,40 @@ footer {
     background: #ff4d4d;
     color: white;
 }
+/* Professional History Table */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.history-table th {
+    background: #2E86C1;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.history-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+}
+
+.history-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.scheduled { background: #e3f2fd; color: #2E86C1; }
+.status-badge.cancelled { background: #ffebee; color: #c62828; }

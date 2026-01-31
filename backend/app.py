@@ -56,7 +56,7 @@ def book_page():
 def appointments_page():
     return render_template("appointments.html")
 
-@app.route("/history-page")
+@app.route("/history")
 def history_page():
     return render_template("history.html")
 

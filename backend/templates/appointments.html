@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Appointment</title>
+    <title>My Appointments</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body class="dash-body">
 
-<div id="appointmentsList"></div>
 <div class="dash-layout">
     <aside class="sidebar">
         <h2 class="logo">Health<span>Care</span></h2>
+        
+        <div class="user-profile-mini">
+            <div class="avatar" id="avatarLetter">U</div>
+            <h4 id="sidebarName">Loading...</h4>
+        </div>
+
         <nav>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/doctors-page">Doctors</a>
-            <a href="/appointments" class="active">Appointments</a>
-            <a href="/history">History</a>
-            <a href="/profile">Profile</a>
+            <a href="/dashboard">🏠 Dashboard</a>
+            <a href="/doctors-page">👨‍⚕️ Doctors</a>
+            <a href="/appointments" class="active">📅 Appointments</a>
+            <a href="/history">📋Medical History</a>
+            <a href="/profile">👤 Profile</a>
         </nav>
+
+        <button class="logout-btn" onclick="logout()">🚪Logout</button>
     </aside>
 
     <main class="main-content">
-        <h2>Book an Appointment</h2>
-        <p>Select a doctor to continue</p>
+        <div class="welcome-bar">
+            <h2>My Appointments</h2>
+            <p>Manage your current scheduled visits</p>
+        </div>
 
-        <div id="doctorList" class="doctor-grid"></div>
+        <div id="appointmentsList" class="appointments-grid">
+            <p class="loading-text">Loading your appointments...</p>
+        </div>
     </main>
 </div>
-
-
 
 <script src="static/js/appointments.js"></script>
 </body>
