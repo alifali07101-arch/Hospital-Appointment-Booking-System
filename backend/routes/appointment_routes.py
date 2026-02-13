@@ -28,7 +28,6 @@ def book_appointment():
         return jsonify({"error": str(e)}), 500
 
 # ================= GET APPOINTMENT HISTORY =================
-# ================= GET APPOINTMENT HISTORY =================
 @appointment_bp.route('/history/<int:pid>', methods=['GET'])
 def get_history(pid):
     try:
@@ -40,7 +39,7 @@ def get_history(pid):
             JOIN doctors d ON a.doctor_id = d.id
             WHERE a.patient_id = %s
             ORDER BY a.appointment_date DESC, a.appointment_time DESC
-        """, (pid,)) # 1. SQL mein 'a.id' add kiya
+        """, (pid,)) 
 
         rows = cur.fetchall()
         cur.close()
@@ -48,11 +47,11 @@ def get_history(pid):
         history = []
         for r in rows:
             history.append({
-                "id": r[0],       # 2. JSON mein "id" key add ki
-                "doctor": r[1],   # Ab index 1 par name hai
-                "date": str(r[2]),# Ab index 2 par date hai
-                "time": str(r[3]),# Ab index 3 par time hai
-                "status": r[4]    # Ab index 4 par status hai
+                "id": r[0],       
+                "doctor": r[1],  
+                "date": str(r[2]),
+                "time": str(r[3]),
+                "status": r[4]    
             })
 
         return jsonify(history)
@@ -60,7 +59,6 @@ def get_history(pid):
         print("Fetch Error:", e)
         return jsonify({"error": "Failed to fetch history"}), 500
     
-    # appointment_routes.py mein add karein
 @appointment_bp.route('/cancel/<int:aid>', methods=['PUT'])
 def cancel_appointment(aid):
     try:
@@ -72,15 +70,13 @@ def cancel_appointment(aid):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-    # appointment_routes.py mein ye function add karein
 @appointment_bp.route('/clear_cancelled/<int:pid>', methods=['DELETE'])
 def clear_cancelled(pid):
     try:
         cur = mysql.connection.cursor()
-        # Sirf wahi appointments delete honge jo is patient ke hain aur Cancelled hain
         cur.execute("DELETE FROM appointments WHERE patient_id = %s AND status = 'Cancelled'", (pid,))
         mysql.connection.commit()
-        deleted_count = cur.rowcount # Kitne records delete hue
+        deleted_count = cur.rowcount 
         cur.close()
         
         return jsonify({

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // 1. Profile Fetch for Sidebar (Quick Update)
+    // 1. Profile Fetch for Sidebar 
     fetch(`/api/patient/profile/${pId}`)
     .then(res => res.json())
     .then(data => {
@@ -30,15 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 activeStatusEl.innerText = "No Appointments Yet";
                 return;
             }
-
-            // Total Count update
             totalCountEl.innerText = data.length;
 
-            // Filter for 'Scheduled' (Upcoming)
             const scheduled = data.filter(a => a.status === 'Scheduled');
             upcomingCountEl.innerText = scheduled.length;
 
-            // Update Active Status text
             const latest = data[0]; 
             activeStatusEl.innerText = `Latest: ${latest.status} (${latest.date})`;
             activeStatusEl.style.color = latest.status === 'Cancelled' ? "red" : "#28a745";
@@ -46,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             if (scheduled.length > 0) {
                 listContainer.classList.remove("no-appointments");
-                listContainer.innerHTML = ""; // Clear "No upcoming appointments" text
+                listContainer.innerHTML = "";
 
                 scheduled.slice(0, 3).forEach(a => { 
                     listContainer.innerHTML += `

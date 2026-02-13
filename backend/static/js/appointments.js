@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pName = localStorage.getItem("patientName") || "User";
     const listContainer = document.getElementById("appointmentsList");
 
-    // Sidebar Update
+    // Sidebar
     document.getElementById("sidebarName").innerText = pName;
     document.getElementById("avatarLetter").innerText = pName.charAt(0).toUpperCase();
 
@@ -15,22 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`/api/appointments/history/${pId}`)
         .then(res => res.json())
         .then(data => {
-            // Loading text ko clear karein
             listContainer.innerHTML = ""; 
 
-            // Filter: Sirf wo appointments jo abhi 'Scheduled' hain
             const activeAppointments = data.filter(a => a.status === 'Scheduled');
 
             if (activeAppointments.length === 0) {
                 listContainer.innerHTML = `
                     <div style="text-align:center; padding:40px; background:white; border-radius:12px;">
-                        <p>Aapka koi active appointment nahi hai.</p>
+                        <p>There is no any  active appointment.</p>
                         <button onclick="window.location='/doctors-page'" class="book-btn" style="margin-top:10px; cursor:pointer;">Book New Appointment</button>
                     </div>`;
                 return;
             }
 
-            // Cards render karein
+            // Cards rendering
             activeAppointments.forEach(a => {
                 listContainer.innerHTML += `
                     <div class="appointment-card-pro" style="background:white; padding:20px; border-radius:12px; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); border-left: 5px solid #2E86C1;">
