@@ -23,29 +23,27 @@ Database: MySQL.
 
 AI Integration: Google Gemini AI (used for the college/hospital enquiry chatbot).
 
-🚀 Installation & Setup
-Clone the Repository:
+**🚀 Installation & Setup**
 
+1.Clone the Repository:
 Bash
 git clone https://github.com/YourUsername/healthcare-portal.git
 cd healthcare-portal
-Install Dependencies:
 
+2.Install Dependencies:
 Bash
 pip install flask flask-mysqldb
-Database Configuration:
 
-Create a database named hospital_db in MySQL.
+3.Database Configuration:
+. Create a database named hospital_db in MySQL.
+. Create tables for patients, doctors, and appointments.
+. Ensure the appointments table includes appointment_date (DATE) and appointment_time (TIME) columns.
 
-Create tables for patients, doctors, and appointments.
-
-Ensure the appointments table includes appointment_date (DATE) and appointment_time (TIME) columns.
-
-Run the Application:
-
+4.Run the Application:
 Bash
 python app.py
-📂 Project Structure
+
+**📂 Project Structure**
 /static: Contains CSS designs and Vanilla JS logic files.
 
 /templates: HTML files for Dashboard, Profile, Appointments, and History.
@@ -54,9 +52,7 @@ python app.py
 
 app.py: Main entry point for the Flask server.
 
-👨‍💻 Developed By
+**👨‍💻 Developed By**
 Aasif
-
 Student at Rungta International Skill University.
-
 Specializing in Full-stack Development and AI Implementation.
